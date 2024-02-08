@@ -1,0 +1,66 @@
+.card {
+    border-radius: 4px;
+    box-shadow: 2px 4px 4px ; /*1st: x offset 2nd: y offset 3rd: blur radius */
+    /* padding: 10px;
+    margin: 17px;
+    margin-bottom: 64px;
+    max-width: 900px;
+    text-align: left;
+    display: inline-block; */
+}
+.card:hover, .card:active, .card:focus {
+    box-shadow: 12px 17px 49px  #ecfdf5;
+    border-width: 0.2rem;
+    border-radius: 4px;
+    transition: opacity 3s ease-in-out;
+}
+.card-p {
+    box-shadow: 12px 17px 49px  #ecfdf5;
+}
+.dropdown-menu {
+    box-shadow: 6px 9px 25px  #ecfdf5;
+}
+.button { 
+    box-shadow: 2px 4px 4px ; /*1st: x offset 2nd: y offset 3rd: blur radius */
+}
+.button:hover, .button:active, .button:focus {
+    box-shadow: 6px 7px 25px  #ecfdf5;
+    transition: opacity 3s ease-in-out;
+}
+.dropdown:hover, .dropdown:active, .dropdown:focus {
+    background-color: #059669;
+    /* transition: ease-in-out; */
+  }
+.dropdown-disabled:hover, .dropdown-disabled:active, .dropdown-disabled:focus {
+    color: white !important;
+    opacity: 0%
+  }
+.card-3:hover {
+    -webkit-filter: blur(4px);
+    filter: blur(2px);
+}
+.clink {
+    /* color: black; */
+    background-color: #fda4af;
+    border-radius: 2px;
+    padding: 2px;
+    width: 91%;
+    z-index:3;
+}
+.clink:hover {
+    color: white;
+    -webkit-filter: blur(3px);
+    filter: blur(1.1px);
+    background: #fdba74;
+    text-decoration: underline ;
+
+}
+.img-clink:hover {
+    color: white;
+    -webkit-filter: blur(5px);
+    filter: blur(3.1px);
+}
+.swipe-text {
+    text-align: right;
+    font-size: 12px;
+}
