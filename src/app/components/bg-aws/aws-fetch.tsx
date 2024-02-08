@@ -1,4 +1,4 @@
-import s3Client from "../../gallery/s3Client";
+import s3Client from "./s3Client";
 function shuffleArray(array: string[]): void {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));

@@ -1,11 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Lightbulb } from "lucide-react";
+import { ArrowLeft, Lightbulb, Moon } from "lucide-react";
 import Background from "../components/ui/bg/bg";
 import BackgroundDark from "../components/ui/bg/bg-dark";
 import ImageGallery from "./gallery";
-import { Moon } from "lucide-react";
 
 export default function Page() {
   const folderPrefix = "bg";
@@ -27,7 +26,7 @@ export default function Page() {
             <ArrowLeft className="w-10 h-10 " aria-label="Go back" />
           </div>
         </Link>
-        GALLERY
+        gallery
         <button
           onClick={toggleDarkMode}
           className="flex items-center ml-4 lg:pointer-events-auto w-10 h-10"

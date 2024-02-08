@@ -3,11 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import BackgroundAws from "./components/bg-aws/background-aws";
-import Marquee from "react-fast-marquee";
-import Gumball from "./components/gumball";
-import Spring from "./components/gumspring";
 import { motion } from "framer-motion";
-
 import { TrackList } from "../../lib/tracklist";
 import TracklistComponent from "./components/ui/tracklist";
 import {
@@ -131,69 +127,50 @@ function App() {
       <BackgroundAws backgroundIndex={backgroundIndex} />
 
       <div
-        className="flex flex-col justify-center items-center min-h-screen"
+        className="flex flex-col justify-center items-center min-h-screen "
         style={{ userSelect: "none" }}
       >
-        {" "}
         <motion.div
-          className="fixed top-0 w-full z-[-10] mt-2"
-          whileHover={{
-            scale: 1.0,
-          }}
-          style={{ fontFamily: "Inter" }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          className="group border-transparent transition-colors hover-bg-center dombui"
+          initial={{ opacity: 0, y: 100, scale: 0 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{
             type: "spring",
-            duration: 8.66,
+            duration: 1.66,
           }}
         >
-          <Marquee
-            className="news-ticker-container z-[-10]"
-            pauseOnHover={true}
-            speed={25}
-            autoFill={true}
-            style={{ userSelect: "none" }}
+          <a
+            className={`mt-2 mb-1 text-3xl text-emerald-50 hover:text-rose-200 font-bold`}
           >
-            <span>
-              <Gumball />
+            <span className="inline-block transition-transform group-hover:-translate-x-1 motion-reduce:transform-none">
+              dom
             </span>
-            <span>
-              <Spring />
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none mr-1.5">
+              bui
             </span>
-          </Marquee>
+            <span className="inline-block transition-transform group-hover:translate-x-1.5 motion-reduce:transform-none mr-2 font-normal">
+              /
+            </span>
+            <span className="inline-block transition-transform group-hover:translate-x-3 motion-reduce:transform-none">
+              INSOMNYC
+            </span>
+          </a>
         </motion.div>
-        <div className=" items-center max m-4">
-          {/* ICON BUTTONS */}
 
-          {/* <motion.button
-            
-            className="bg-emerald-300 text-emerald-50 py-1.5 px-2.5 rounded-full bg-button mb-4 ml-3"
-            whileTap={{
-              scale: 0.89,
-            }}
-            whileHover={{
-              scale: 0.94,
-            }}
-            initial={{ opacity: 0, x: -400, scale: 0 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{
-              type: "spring",
-              duration: 1.25,
-            }}
-          >
-            <Candy className="w-7 h-7" />
-          </motion.button> */}
-        </div>
-        {/* MAIN NAV BUTTONS */}
+        <div className=" items-center max m-4"></div>
+        {/* MAIN ICON BUTTONS */}
         <div className="flex items-center justify-center mb-2 space-x-4">
           <motion.a
             href="/contact"
             className="bg-emerald-300 text-emerald-50 p-4 rounded-xl bg-button"
             aria-label="Scrum Board"
             rel="noopener noreferrer"
+            whileTap={{
+              scale: 0.89,
+            }}
+            whileFocus={{ scale: 0.89 }}
             whileHover={{
-              scale: 0.9,
+              scale: 0.97,
             }}
             initial={{ opacity: 0, x: -400, scale: 0 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -207,8 +184,12 @@ function App() {
           <motion.button
             onClick={changeBackground}
             className="bg-emerald-300 text-emerald-50 p-4 rounded-xl bg-button"
+            whileTap={{
+              scale: 0.89,
+            }}
+            whileFocus={{ scale: 0.89 }}
             whileHover={{
-              scale: 0.9,
+              scale: 0.97,
             }}
             initial={{ opacity: 0, y: 400, scale: 0 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -224,8 +205,12 @@ function App() {
             className="bg-emerald-300 text-emerald-50 p-4 rounded-xl bg-button"
             aria-label="Scrum Board"
             rel="noopener noreferrer"
+            whileTap={{
+              scale: 0.89,
+            }}
+            whileFocus={{ scale: 0.89 }}
             whileHover={{
-              scale: 0.9,
+              scale: 0.97,
             }}
             initial={{ opacity: 0, x: 400, scale: 0 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -237,6 +222,7 @@ function App() {
             <Rabbit className="w-8 h-8" />
           </motion.a>
         </div>
+        {/* RED TEXT BUTTONS */}
         <span className="max-w-auto">
           <div className="flex flex-col items-center text-5xl mt-3">
             <motion.a
@@ -246,8 +232,9 @@ function App() {
               whileTap={{
                 scale: 0.89,
               }}
+              whileFocus={{ scale: 0.89 }}
               whileHover={{
-                scale: 0.94,
+                scale: 0.97,
               }}
               initial={{ opacity: 0, x: 400, scale: 0 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -266,8 +253,9 @@ function App() {
               whileTap={{
                 scale: 0.89,
               }}
+              whileFocus={{ scale: 0.89 }}
               whileHover={{
-                scale: 0.94,
+                scale: 0.97,
               }}
               initial={{ opacity: 0, y: 400, scale: 0 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -291,12 +279,16 @@ function App() {
           </Link> */}
         </div>
         {/* MUSIC PLAYER */}
-        <div className="flex items-center justify-center mb-5 space-x-8">
+        <div className="flex items-center justify-center mb-5 space-x-8 mt-6">
           <motion.button
             onClick={playPause}
             className="text-emerald-50 mr-3 bg-transparent p-2  rounded-xl bg-button"
+            whileTap={{
+              scale: 0.89,
+            }}
+            whileFocus={{ scale: 0.89 }}
             whileHover={{
-              scale: 0.9,
+              scale: 0.97,
             }}
             initial={{ opacity: 0, x: -400, scale: 0 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -314,8 +306,12 @@ function App() {
           <motion.button
             onClick={playNextSong}
             className="text-emerald-50 bg-transparent p-2 rounded-xl bg-button"
+            whileTap={{
+              scale: 0.89,
+            }}
+            whileFocus={{ scale: 0.89 }}
             whileHover={{
-              scale: 0.9,
+              scale: 0.97,
             }}
             initial={{ opacity: 0, x: 400, scale: 0 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -329,7 +325,7 @@ function App() {
         </div>
         {/* 2024 TERMS */}
         <motion.div
-          className="group border-transparent transition-colors hover-bg-center dombui"
+          className="group border-transparent transition-colors hover-bg-center dombui mt-4"
           initial={{ opacity: 0, y: 100, scale: 0 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{
@@ -339,7 +335,7 @@ function App() {
         >
           <Link
             href="/terms"
-            className={`mt-6 mb-1 text-sm text-emerald-50 hover:text-rose-200 `}
+            className={` mb-1 text-sm text-emerald-50 hover:text-rose-200 `}
           >
             © 2024{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">

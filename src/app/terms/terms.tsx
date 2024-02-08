@@ -9,17 +9,24 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Terms() {
   return (
-    <main>
-      <div>
-        <div className="max-w-prose mx-auto pr-10 overflow-y-auto h-80">
-          <p className="text-emerald-50" style={{ userSelect: "none" }}>
-            <br />
+    <main className="pt-6">
+      {" "}
+      {/* Adjust this padding to match your header's height plus any desired gap */}
+      <div className="max-w-prose mx-auto px-4 lg:px-4 ">
+        <div
+          className="overflow-y-auto h-screen pb-2 custom-scrollbar"
+          style={{ maxHeight: "calc(70vh - 6rem) " }}
+        >
+          {" "}
+          {/* Adjust bottom padding and maxHeight to ensure it doesn't scroll behind the header */}
+          <p className="text-emerald-50 pr-4" style={{ userSelect: "none" }}>
             This website (&quot;
             <a className="font-medium p-px hover:bg-rose-300 hover:text-emerald-50 hover:rounded-sm hover:blur-xs">
               dombui.com
             </a>
-            &quot;) was built using AWS, Blender, Next.js, React, Tailwind,
-            Three.js, Typescript, and Sanity, with payments powered by Stripe.
+            &quot;) was built (and continues to be built) using AWS, Blender,
+            Next.js, React, Tailwind, Three.js, Typescript, and Sanity, with
+            payments powered by Stripe.
             <br />
             <br />
             If you have any feedback with this site, we&#39;re always looking to
@@ -53,7 +60,7 @@ export default function Terms() {
               dombui.com
             </a>{" "}
             (&quot;Site&quot;), is owned and operated by Dominick Bui. (d/b/a
-            dombui-INSOMNYC) (&quot;dombui&quot;, &quot;us&quot; or
+            dombui-insomnyc) (&quot;dombui&quot;, &quot;us&quot; or
             &quot;we&quot;). You should not access this Site or use our services
             until you have carefully read and agreed to these terms and
             conditions of use (the &quot;Terms&quot;) which govern your access
