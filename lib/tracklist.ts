@@ -181,4 +181,9 @@ export const TrackList = [
         artist: "Boards of Canada",
         youtubeId: "_pFSC1x3k2g",
     },
+    {
+        title: "Gymnopédie No 1",
+        artist: "Erik Satie",
+        youtubeId: "eMnxjdGTK4w",
+    },
 ];

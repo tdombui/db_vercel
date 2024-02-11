@@ -25,7 +25,6 @@ interface Song {
   artist: string;
   youtubeId: string;
 }
-
 const shuffleArray = (array: Song[]): Song[] => {
   let currentIndex = array.length,
     randomIndex;

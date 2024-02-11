@@ -6,7 +6,7 @@ import { validateString, getErrorMessage } from "../../../lib/utils";
 import ContactFormEmail from "./email/email";
 
 // Mount Resend library => see .env for API
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
 // Initiate sendEmail function => takes input from <Form> from contact.tsx
 export const sendEmail = async (formData: FormData) => {
   const senderEmail = formData.get('senderEmail')

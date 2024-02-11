@@ -10,7 +10,19 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { useToast } from "../components/ui/use-toast";
 import { CartItemsEmpty } from "../components/cart-items-empty";
+interface ProductData {
+  color: string;
+  size: string;
+}
 
+interface Product {
+  _id: string;
+  name: string;
+  price: number;
+  currency: string;
+  product_data: ProductData; // Link to your ProductData interface
+  // Include any other properties that might be part of your Product object
+}
 export function CartItems() {
   const { cartDetails, removeItem, setItemQuantity } = useShoppingCart();
   const cartItems = Object.entries(cartDetails!).map(([_, product]) => product);
@@ -21,12 +33,12 @@ export function CartItems() {
       color?: string;
       size?: string;
     };
-    const itemId = `${product._id}-${productData.color}-${productData.size}`;
-    removeItem(product._id); // Use this uniqueId to correctly identify the item in the cart
+    const uniqueId = `${product._id}-${product.product_data.color}-${product.product_data.size}`;
+    removeItem(uniqueId); // Use this uniqueId to correctly identify the item in the cart
 
     toast({
       title: `${product.name}`,
-      description: `Size: ${getSizeName}, Color: ${getColorName}`,
+      description: `removed from cart`,
       variant: "destructive",
     });
   }

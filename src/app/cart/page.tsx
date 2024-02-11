@@ -4,7 +4,6 @@ import { CartItems } from "../components/cart-items";
 import { ArrowLeft } from "lucide-react";
 import { CartSummary } from "../components/cart-summary";
 import Background from "../components/ui/bg/bg";
-import Knot from "../../../public/knot.png";
 
 export default function Page() {
   return (
@@ -21,13 +20,6 @@ export default function Page() {
             <ArrowLeft className="w-10 h-10 " aria-label="Go back" />
           </Link>
           INSOMNYC
-          <Image
-            src={Knot}
-            width={36}
-            height={36}
-            alt="Black Sheep"
-            className="flex items-center lg:pointer-events-auto ml-5"
-          />
         </h1>
 
         <form className="mt-6 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16">

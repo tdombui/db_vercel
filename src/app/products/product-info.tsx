@@ -25,18 +25,15 @@ export function ProductInfo({ product }: Props) {
   const { toast } = useToast();
   const isInCart = !!cartDetails?.[product._id];
   function addToCart() {
+    const uniqueId = `${product._id}-${selectedColor}-${selectedSize}`; // Create a unique identifier
+
     const item = {
       ...product,
-      id: product._id, // Keep the original product ID
-      name: product.name,
-      price: product.price,
-      currency: product.currency,
+      id: uniqueId, // Use the unique identifier for the item ID
       product_data: {
-        // Additional data for cart display and management
         color: selectedColor,
         size: selectedSize,
       },
-      uniqueId: `${product._id}-${selectedColor}-${selectedSize}`,
     };
     // Check if selected size and/or color is available
     const isSizeAvailable =
