@@ -147,11 +147,6 @@ export const TrackList = [
         youtubeId: "zOKDuKbjhu0",
     },
     {
-        title: "gods. w/ SOUDIERE",
-        artist: "idntrmmbr.",
-        youtubeId: "hZBHoMdPO-M",
-    },
-    {
         title: "July the Fourth",
         artist: "Nothing",
         youtubeId: "IYzMbqYOnmI",

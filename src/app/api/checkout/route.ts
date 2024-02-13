@@ -1,8 +1,27 @@
 // Import necessary modules and inventory
 import { NextResponse } from "next/server";
 import { validateCartItems } from "use-shopping-cart/utilities";
-import { inventory } from "../../../../config/inventory";
+import { inventory as rawInventory } from "../../../../config/inventory";
 import { stripe } from "../../../../lib/stripe";
+
+interface ProductDetails {
+  name: string;
+  price: number;
+  currency: string;
+}
+
+interface Inventory {
+  [productId: string]: ProductDetails;
+}
+
+const inventory: Inventory = rawInventory.reduce((acc: Inventory, product) => {
+  acc[product.id] = {
+    name: product.name,
+    price: product.price,
+    currency: product.currency
+  };
+  return acc;
+}, {});
 
 export async function POST(request: Request) {
   try {

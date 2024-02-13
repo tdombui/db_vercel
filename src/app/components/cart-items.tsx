@@ -4,7 +4,7 @@ import Link from "next/link";
 import { urlForImage } from "../../../sanity/lib/image";
 import { X } from "lucide-react";
 import { formatCurrencyString, useShoppingCart } from "use-shopping-cart";
-import { Product } from "use-shopping-cart/core";
+// import { Product } from "use-shopping-cart/core";
 import { getColorName, getSizeName } from "../../../lib/utils";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
@@ -112,7 +112,9 @@ export function CartItems() {
                     variant="ghost"
                     type="button"
                     className="-mr-2 inline-flex p-2"
-                    onClick={() => removeCartItem(product)}
+                    onClick={() =>
+                      removeCartItem(product as unknown as Product)
+                    }
                   >
                     <span className="sr-only">Remove</span>
                     <X className="h-5 w-5" aria-hidden="true" />

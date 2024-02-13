@@ -19,7 +19,7 @@ export default function CheckoutSuccessPage() {
             href="/"
             className="hover:background lg:p-8  hover:drop-shadow-glow"
           >
-            <Image src={Db} alt="DB Logo" width={81} height={55} />
+            <Image src={Db} alt="DB Logo" width={121} height={121} />
           </Link>
           <a
             href="/contact"
