@@ -10,11 +10,11 @@ module.exports = {
           protocol: 'https',
           hostname: 'cdn.sanity.io',
           port: '',
-        //   pathname: '/account123/**',
+        
         },
       ],
     },
-    // experimental: {
-    //   serverActions: true,
-    // }
+    experimental: {
+      serverActions: true,
+    }
   }
